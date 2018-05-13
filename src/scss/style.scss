@@ -1,0 +1,23 @@
+// Helpers
+@import 'helpers/variables';
+@import 'helpers/placeholders';
+@import 'helpers/mixins';
+// Layout
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $default-font-size;
+}
