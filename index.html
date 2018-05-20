@@ -12,13 +12,36 @@
 </header>
 
 <main role="main">
-    <section class="top-bar"></section>
+    <section class="content top-content"></section>
     <div class="row">
-        <section class="col-4 left-bar"></section>
-        <section class=" col-4 middle-bar">
-            <input type="text" name="text" title="text input"/>
-        </section>
-        <section class="col-4 right-bar"></section>
+        <div class="col-2 content left-content"></div>
+        <div class=" col-8 content middle-content">
+            <div class="content-nav">
+                <ul class="row">
+                    <li class="col-4">Editor</li>
+                    <li class="col-4">Overused Words</li>
+                    <li class="col-4">Instruction</li>
+                </ul>
+                <div class="moving-underline"></div>
+            </div>
+            <section class="editor">
+                <textarea type="text" name="text" title="text"></textarea>
+            </section>
+            <section class="overused-words">
+                <div class="row">
+                    <div class="col-9 add-words">
+                        <input type="text" title="new overused words" placeholder="type word/words"/>
+                    </div>
+                    <div class="col-3 list"></div>
+                </div>
+            </section>
+            <section class="instruction">
+                <article>
+
+                </article>
+            </section>
+        </div>
+        <div class="col-2 content right-content"></div>
     </div>
 </main>
 

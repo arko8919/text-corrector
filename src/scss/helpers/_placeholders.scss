@@ -1,0 +1,14 @@
+%content-menu-positioning {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  height: 80%;
+  width: 100%;
+}
+
+%absolute-vh-positioning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

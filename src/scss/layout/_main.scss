@@ -1,0 +1,14 @@
+main {
+  .content {
+    border: 1px solid red;
+    height: 5em;
+  }
+  .row {
+    .content {
+      height: 25em;
+      section {
+        height: 80%;
+      }
+    }
+  }
+}

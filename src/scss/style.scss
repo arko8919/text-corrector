@@ -7,6 +7,12 @@
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
+// Components
+@import 'components/overused-words';
+@import 'components/editor';
+@import 'components/instruction';
+@import 'components/middle-content';
+@import 'components/content-nav';
 
 html {
   box-sizing: border-box;
