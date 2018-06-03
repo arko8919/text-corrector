@@ -6,7 +6,6 @@
     <title>Editor</title>
 </head>
 <body>
-<script src="dist/bundle.js"></script>
 <header>
     <h1>Overused Words Checker</h1>
 </header>
@@ -17,15 +16,15 @@
         <div class="col-2 content left-content"></div>
         <div class=" col-8 content middle-content">
             <div class="content-nav">
-                <ul class="row">
-                    <li class="col-4">Editor</li>
-                    <li class="col-4">Overused Words</li>
-                    <li class="col-4">Instruction</li>
-                </ul>
+                <div class="row">
+                    <button class="col-4 content-buttons" value="editor">Editor</button>
+                    <button class="col-4 content-buttons" value="overused-words">Overused Words</button>
+                    <button class="col-4 content-buttons" value="instruction">Instruction</button>
+                </div>
                 <div class="moving-underline"></div>
             </div>
             <section class="editor">
-                <textarea type="text" name="text" title="text"></textarea>
+                <div contenteditable="true" id="textarea"></div>
             </section>
             <section class="overused-words">
                 <div class="row">
@@ -48,6 +47,7 @@
 <footer>
 
 </footer>
+<script src="dist/bundle.js"></script>
 <noscript>
     You need to enable JavaScript to run this app.
 </noscript>

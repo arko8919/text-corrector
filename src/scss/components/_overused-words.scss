@@ -1,5 +1,6 @@
 .overused-words {
   @extend %content-menu-positioning;
+  left: -150%;
   div {
     height: 100%;
     .add-words {
@@ -7,7 +8,6 @@
       position: relative;
       input {
         @extend %absolute-vh-positioning;
-
       }
     }
 
