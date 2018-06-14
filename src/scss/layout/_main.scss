@@ -1,14 +1,21 @@
 main {
-  .content {
-    border: 1px solid red;
+  overflow: hidden;
+  .text-information {
+    border: 1px solid black;
     height: 5em;
   }
-  .row {
-    .content {
-      height: 25em;
-      section {
-        position: absolute;
-        height: 80%;
+
+  .container {
+    border: 1px solid black;
+    padding: 5px;
+    height: 25em;
+    word-break: break-all;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        border-bottom: 1px solid red;
       }
     }
   }

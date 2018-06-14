@@ -1,0 +1,42 @@
+.content {
+  @extend %content-menu-positioning;
+
+  #text-area, #repeated-words-output, #overused-words-output {
+    width: 100%;
+    height: 100%;
+    padding: 0.5em;
+    font: 20px/28px 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  #text-area {
+    resize: none;
+    background-color: transparent;
+  }
+
+  #repeated-words-output {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    color: transparent;
+    mark {
+      color: transparent;
+    }
+  }
+
+  #overused-words-output {
+    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: transparent;
+    mark {
+      color: transparent;
+      background-color: orange;
+    }
+  }
+}

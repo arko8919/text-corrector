@@ -8,12 +8,13 @@
 @import 'layout/main';
 @import 'layout/footer';
 // Components
-@import 'components/overused-words';
-@import 'components/editor';
+@import 'components/add-overused-words';
+@import 'components/content';
 @import 'components/instruction';
-@import 'components/middle-content';
-@import 'components/content-nav';
-@import 'components/left-content';
+@import 'components/editor';
+@import 'components/editor-nav';
+@import 'components/repeated-words';
+@import 'components/overused-words';
 
 html {
   box-sizing: border-box;

@@ -11,36 +11,38 @@
 </header>
 
 <main role="main">
-    <section class="content top-content"></section>
+    <section class="text-information"></section>
     <div class="row">
-        <div class="col-2 content left-content"></div>
-        <div class=" col-8 content middle-content">
-            <div class="content-nav">
+        <section class="col-2 container">
+            <ul class="repeated-words-list"></ul>
+        </section>
+        <section class="col-8 container editor">
+            <div class="editor-nav">
                 <div class="row">
-                    <button class="col-4 content-buttons" value="editor">Editor</button>
-                    <button class="col-4 content-buttons" value="overused-words">Overused Words</button>
-                    <button class="col-4 content-buttons" value="instruction">Instruction</button>
+                    <button class="col-4 editor-nav-buttons" value="content">Editor</button>
+                    <button class="col-4 editor-nav-buttons" value="add-overused-words">Overused Words</button>
+                    <button class="col-4 editor-nav-buttons" value="instruction">Instruction</button>
                 </div>
                 <div class="moving-underline"></div>
             </div>
-            <section class="editor">
-                <div contenteditable="true" id="textarea"></div>
+            <section class="content">
+                <textarea title="text-area" id="text-area"></textarea>
+                <div id="repeated-words-output"></div>
+                <div id="overused-words-output"></div>
             </section>
-            <section class="overused-words">
-                <div class="row">
-                    <div class="col-9 add-words">
-                        <input type="text" title="new overused words" placeholder="type word/words"/>
-                    </div>
-                    <div class="col-3 list"></div>
-                </div>
+            <section class="add-overused-words">
+                <input id="input" type="text" title="overused-words-input" placeholder="type word/words"/>
+                <button id="overused-words-btn">Add Word</button>
             </section>
             <section class="instruction">
                 <article>
 
                 </article>
             </section>
-        </div>
-        <div class="col-2 content right-content"></div>
+        </section>
+        <section class="col-2 container">
+            <ul class="overused-words-list"></ul>
+        </section>
     </div>
 </main>
 

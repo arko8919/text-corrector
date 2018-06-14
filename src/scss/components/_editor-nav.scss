@@ -1,12 +1,9 @@
-.content-nav {
+.editor-nav {
   height: 20%;
-  // inside navigation
-  div {
     button {
       padding: 0;
       margin: 0;
     }
-  }
   // underline under active navigation item
   .moving-underline {
     position: relative;
