@@ -1,7 +1,7 @@
 {
-  "name": "overused-words-checker",
+  "name": "email-editor",
   "version": "1.0.0",
-  "description": "overused words checker",
+  "description": "email-editor",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
