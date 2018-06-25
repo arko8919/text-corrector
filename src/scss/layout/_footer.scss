@@ -1,6 +1,17 @@
 footer {
   position : relative;
   height : 10%;
+  text-align: center;
+  .social-media {
+    margin-right: 2%;
+    text-align: right;
+    a {
+      font-size: calculateRem(42px);
+      color: $carbon;
+      cursor: pointer;
+    }
+  }
+
   p {
     @include center(true, false);
     bottom : 0;

@@ -4,6 +4,9 @@ main {
   @media only screen and (min-width: 600px) {
     height : 70%;
   }
+  @media only screen and (min-width: 468px) and (max-height: 468px) {
+    height: 100%;
+  }
   .string-data {
     height : 8%;
     @media only screen and (min-height: 468px) {

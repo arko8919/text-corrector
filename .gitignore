@@ -7,3 +7,5 @@
 test.css
 test.css.map
 
+#production
+/dist

@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "email-editor",
   "main": "app.js",
-    "browserslist": [
-      "> 1%",
-      "ie > 9"
-    ],
+  "browserslist": [
+    "> 1%",
+    "IE 9"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js",
-    "build": "webpack --config webpack.config.js --watch"
+    "build": "webpack --config webpack.config.js",
+    "deploy": "npm run build&&gh-pages -d dist",
+    "build-watch": "webpack --config webpack.config.js --watch"
   },
   "keywords": [
     "overused",
@@ -19,6 +21,7 @@
   ],
   "author": "Artur SD",
   "license": "ISC",
+  "homepage": "https://arko8919.github.io/mini-linter",
   "devDependencies": {
     "autoprefixer": "^8.6.3",
     "babel-core": "^6.26.3",
@@ -26,6 +29,7 @@
     "babel-preset-env": "^1.7.0",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "gh-pages": "^1.2.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.5",
@@ -36,6 +40,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "browserslist": "^3.2.8",
     "csscomb": "^4.2.0",
     "normalize.css": "^8.0.0"
   }
