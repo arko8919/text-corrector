@@ -2,7 +2,7 @@ const highlightText = require('./highlightText');
 const createOverusedWordsElements = require('./createOverusedWordsElements');
 
 const overusedWordsList = document.getElementsByClassName('overused-words-list')[0];
-const button = overusedWordsList.getElementsByTagName('button');
+const remove = overusedWordsList.getElementsByClassName('remove');
 const overusedWordsOutput = document.getElementById('overused-words-output');
 const checkbox = document.getElementsByClassName('checkbox');
 
@@ -20,10 +20,10 @@ const addOverusedWords = (overusedWords, checkedWords) => {
         createOverusedWordsElements(overusedWordsList, checkedWords, word);
 
         // remove overused word from the list
-        button[index].addEventListener('click', event => {
+        remove[index].addEventListener('click', event => {
             // remove word from checked word list
             const wordToRemove = event.target.parentElement.id;
-
+            console.log(event.target.parentElement.id);
             // if overused word is checked remove it from the list
             for (let checkedWordsIndex = 0; checkedWordsIndex < checkedWords.length; checkedWordsIndex++) {
                 if (checkedWords[checkedWordsIndex] === wordToRemove) {
@@ -49,10 +49,11 @@ const addOverusedWords = (overusedWords, checkedWords) => {
         checkbox[index].addEventListener('change', event => {
             if (event.target.checked) {
                 // get label element content
-                checkedWords.push(event.target.parentElement.textContent);
+                checkedWords.push(event.target.parentElement.id);
+                console.log(event.target.parentElement.id);
             } else {
                 for (let i = checkedWords.length - 1; i >= 0; i--) {
-                    if (checkedWords[i] === event.target.parentElement.textContent) {
+                    if (checkedWords[i] === event.target.parentElement.id) {
                         checkedWords.splice(i, 1);
                         break;
                     }

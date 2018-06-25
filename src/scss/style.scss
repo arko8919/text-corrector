@@ -2,6 +2,7 @@
 @import 'helpers/variables';
 @import 'helpers/placeholders';
 @import 'helpers/mixins';
+@import 'helpers/functions';
 // Layout
 @import 'layout/grid';
 @import 'layout/header';
@@ -9,23 +10,62 @@
 @import 'layout/footer';
 // Components
 @import 'components/add-overused-words';
-@import 'components/content';
+@import 'components/add-text';
 @import 'components/instruction';
 @import 'components/editor';
-@import 'components/editor-nav';
-@import 'components/repeated-words';
-@import 'components/overused-words';
+@import 'components/side-content';
+@import 'components/string-data';
 
 html {
-  box-sizing: border-box;
+  position : relative;
+  box-sizing : border-box;
+  height : 100%;
+  font-size : 100%;
+
+  @media only screen and (min-width: 321px) {
+    font-size : 10px;
+  }
+
+  @media only screen and (min-width: 468px) {
+    font-size : 12px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size : 14px;
+  }
+
+  @media only screen and (min-width: 1224px) {
+    font-size : 16px;
+  }
+
+  @media only screen and (min-width: 1824px) {
+    font-size : 18px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-height: 468px) {
+    font-size : 12px;
+  }
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing : inherit;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-size: $default-font-size;
+  position : absolute;
+  width : 100%;
+  height : 100%;
+  margin : 0;
+  padding : 0;
+  background : url('../assets/background.png') repeat;
+  font-family : $default-font-family;
+  h1, h2, h3, h4 {
+    text-align : center;
+  }
+
+  h4 {
+    display : inline-block;
+    margin : calculateRem(2px) 0;
+    border-bottom : 1px solid $sky;
+  }
 }

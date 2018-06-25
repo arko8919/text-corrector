@@ -1,0 +1,101 @@
+.overused-words, .repeated-words {
+  overflow-y : auto;
+  position : relative;
+  z-index : 10;
+  height : 20%;
+  padding : calculateRem(5px);
+  background-color : $neutral;
+  font-size : calculateRem(16px);
+  text-align : center;
+  user-select : none;
+  @media only screen and (min-width: 600px) {
+    height : 100%;
+  }
+  h4 {
+    text-transform : uppercase;
+  }
+}
+
+.repeated-words {
+  ul {
+    margin : 0;
+    padding : 0;
+    list-style-type : none;
+    li {
+      padding : calculateRem(10px) 0 calculateRem(5px) 0;
+      border-bottom : calculateRem(1px) solid $watermelon;
+      //text-transform: uppercase;
+      font-family : $mono-font-family;
+      cursor : pointer;
+      user-select : none;
+    }
+  }
+}
+
+.overused-words {
+  // customize the label
+  label {
+    display : block;
+    position : relative;
+    margin-bottom : calculateRem(2px);
+    //font-size: calculateRem(16px);
+    padding : 0 calculateRem(24px);
+    font-family : $mono-font-family;
+    cursor : pointer;
+    // custom checkbox
+    .check-mark {
+      position : absolute;
+      top : 0;
+      left : 0;
+      width : calculateRem(20px);
+      height : 100%;
+      margin : 0;
+      padding : 0;
+      background-color : $gainsboro;
+      // create the checkmark/indicator (hidden when not checked)
+      &:after {
+        display : none;
+        position : absolute;
+        top : 50%;
+        left : 50%;
+        width : calculateRem(5px);
+        height : calculateRem(10px);
+        border : solid $neutral;
+        border-width : 0 calculateRem(3px) calculateRem(3px) 0;
+        content : '';
+        transform : translate(-50%, -50%) rotate(45deg);
+      }
+    }
+    // hide the browser's default checkbox
+    input {
+      position : absolute;
+      margin : 0;
+      opacity : 0;
+      cursor : pointer;
+
+      &:checked ~ .check-mark:after {
+        display : block;
+      }
+
+      &:checked ~ .check-mark {
+        background-color : $watermelon;
+      }
+    }
+    // remove element
+    .remove {
+      @include center(false, true);
+      position : absolute;
+      right : calculateRem(5px);
+      width : calculateRem(12px);
+      height : 100%;
+      &:after {
+        @include center(false, true);
+        left : calculateRem(3px);
+        width : 100%;
+        border : solid $black;
+        border-width : calculateRem(2px) 0 0 0;
+        content : '';
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.add-text {
+  left : 0;
+  #text-area, #repeated-words-output, #overused-words-output {
+    width : 100%;
+    height : 100%;
+    padding : calculateRem(10px);
+    font-family : $default-font-family;
+    font-size : calculateRem(20px);
+    white-space : pre-wrap;
+    letter-spacing : calculateRem(1px);
+    word-wrap : break-word;
+  }
+
+  #text-area {
+    z-index : 1;
+    border : none;
+    border-top : 1px solid $sky;
+    background-color : transparent;
+    resize : none;
+  }
+
+  #repeated-words-output {
+    position : absolute;
+    z-index : -2;
+    top : 0;
+    left : 0;
+    color : transparent;
+    background-color : $neutral;
+    mark {
+      color : transparent;
+      background-color : $sky;
+    }
+  }
+
+  #overused-words-output {
+    position : absolute;
+    z-index : -1;
+    top : 0;
+    left : 0;
+    color : transparent;
+    mark {
+      color : transparent;
+      background-color : orange;
+    }
+  }
+}

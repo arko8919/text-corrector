@@ -5,9 +5,11 @@ const highlightWord = (span, currentWord) => {
         const matchedWord = matched.toString();
 
         if (matchedWord === currentWord) {
-            span[index].style.backgroundColor = 'red';
+            span[index].style.backgroundColor = '#FF3B3F';
+            span[index].style.color = '#EFEFEF';
         } else {
-            span[index].style.backgroundColor = 'white';
+            span[index].style.backgroundColor = '#EFEFEF';
+            span[index].style.color = '#000';
         }
     }
 };

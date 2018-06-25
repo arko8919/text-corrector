@@ -1,0 +1,8 @@
+footer {
+  position : relative;
+  height : 10%;
+  p {
+    @include center(true, false);
+    bottom : 0;
+  }
+}

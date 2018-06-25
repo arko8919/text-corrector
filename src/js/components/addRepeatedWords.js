@@ -8,7 +8,7 @@ const repeatedWordsOutput = document.getElementById('repeated-words-output');
 const repeatedWordsList = document.getElementsByClassName('repeated-words-list')[0];
 // // reference to created repeated words
 const li = repeatedWordsList.getElementsByTagName('li');
-
+const textAreaReference = document.getElementById('text-area');
 
 // store information about last clicked word and whether is highlighted
 const state = {
@@ -45,7 +45,9 @@ const addRepeatedWords = repeatingWords => {
                 // set state of span element
                 state.highlighted = false;
                 state.currentWord = repeatingWord[0];
-                event.target.style.backgroundColor = 'white';
+                event.target.style.backgroundColor = '#EFEFEF';
+                event.target.style.color = '#000';
+                repeatedWordsOutput.innerHTML = textAreaReference.value;
             }
 
             event.preventDefault();

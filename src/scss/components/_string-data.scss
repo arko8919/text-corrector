@@ -1,0 +1,13 @@
+.string-data {
+  overflow : hidden;
+  width : 65%;
+  margin : 0 auto;
+  border-bottom : 1px solid $carbon;
+  text-align : center;
+  p {
+    display : inline-block;
+    margin : 0;
+    padding : 0 calculateRem(8px);
+    font-size : calculateRem(14px);
+  }
+}

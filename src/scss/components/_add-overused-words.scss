@@ -1,6 +1,103 @@
 .add-overused-words {
-  @extend %content-menu-positioning;
-  left: -150%;
-  height: 100%;
-  text-align: center;
+  left : 100%;
+  // add custom overused word/words to list
+  div:first-child {
+    height : 25%;
+    padding-bottom : calculateRem(10px);
+    border-bottom : calculateRem(1px) solid $carbon;
+    text-align : center;
+    @media only screen and (min-width: 600px) {
+      height : 100%;
+      padding-top : 5%;
+      padding-bottom : 0;
+      border-bottom : none;
+    }
+
+    label {
+      display : block;
+      text-transform : uppercase;
+    }
+
+    input {
+      width : 50%;
+      margin-bottom : calculateRem(5px);
+      padding : calculateRem(3px);
+      @media only screen and (min-width: 600px) {
+        width : 80%;
+      }
+    }
+
+    button {
+      display : block;
+      width : 25%;
+      margin : 0 auto;
+      padding : calculateRem(5px);
+      border : none;
+      outline : none;
+      color : $white;
+      background-color : $watermelon;
+      box-shadow : 0 0 5px 0 $black;
+      font-family : $mono-font-family;
+      font-weight : bold;
+      text-transform : uppercase;
+      cursor : pointer;
+      transition : all .5s;
+      @media only screen and (min-width: 600px) {
+        width : 50%;
+      }
+      &:hover {
+        color : $watermelon;
+        background-color : $white;
+      }
+    }
+
+    p {
+      display : none;
+      margin : calculateRem(40px) calculateRem(20px) 0;
+      padding : calculateRem(5px);
+      border-radius : calculateRem(5px);
+      color : $neutral;
+      background-color : $carbon;
+      @media only screen and (min-width: 600px) {
+        display : block;
+      }
+    }
+  }
+  // example of overused words
+  div:last-child {
+    overflow-y : auto;
+    height : 75%;
+    text-align : center;
+    @media only screen and (min-width: 600px) {
+      overflow-y : auto;
+      height : 100%;
+      padding-top : calculateRem(50px);
+      border-left : 1px solid $carbon;
+    }
+
+    h3 {
+      margin : 0 calculateRem(10px);
+    }
+    ol {
+      padding : calculateRem(5px);
+      @media only screen and (min-width: 600px) {
+        text-align : left;
+      }
+      li {
+        display : inline-block;
+        position : relative;
+        width : calculateRem(160px);
+        margin : calculateRem(5px);
+        padding-left : calculateRem(50px);
+        button {
+          @include center(false, true);
+          left : 0;
+          color : $neutral;
+          background-color : $watermelon;
+          font-size : calculateRem(20px);
+          cursor : pointer;
+        }
+      }
+    }
+  }
 }
