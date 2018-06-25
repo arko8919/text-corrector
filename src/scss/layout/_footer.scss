@@ -2,9 +2,11 @@ footer {
   position : relative;
   height : 10%;
   text-align: center;
+  @media only screen and (max-width: 600px), screen and (max-height: 468px) and (orientation: landscape) {
+    min-height: 6rem;
+  }
   .social-media {
-    margin-right: 2%;
-    text-align: right;
+    text-align: center;
     a {
       font-size: calculateRem(42px);
       color: $carbon;
@@ -13,7 +15,7 @@ footer {
   }
 
   p {
-    @include center(true, false);
-    bottom : 0;
+    margin: 0;
+    padding: 0;
   }
 }

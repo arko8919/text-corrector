@@ -1,29 +1,25 @@
 main {
-  overflow : hidden;
-  height : 80%;
+  overflow: hidden;
+  height: 80%;
   @media only screen and (min-width: 600px) {
-    height : 70%;
+    height: 70%;
   }
-  @media only screen and (min-width: 468px) and (max-height: 468px) {
-    height: 100%;
+  @media only screen and (max-width: 480px), screen and (max-height: 468px) and (orientation: landscape) {
+    min-height:  40rem;
   }
-  .string-data {
-    height : 8%;
-    @media only screen and (min-height: 468px) {
-      height : 5%;
-    }
+
+  @media only screen and (min-width: 481px), screen and (max-height: 468px) and (orientation: landscape) {
+    min-height:  30rem;
   }
+
   .container {
-    height : 92%;
+    height: 92%;
     @media only screen and (min-height: 468px) {
-      height : 95%;
+      height: 95%;
     }
     .content {
-      border-top : calculateRem(1px) solid #A9A9A9;
-      border-bottom : calculateRem(1px) solid #A9A9A9;
-      .editor-sections {
-        transition : all .5s;
-      }
+      border-top: calculateRem(1px) solid #A9A9A9;
+      border-bottom: calculateRem(1px) solid #A9A9A9;
     }
   }
 }
