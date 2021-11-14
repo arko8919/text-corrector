@@ -1,18 +1,21 @@
 .string-data {
-  border-top: calculateRem(1px) solid $sky;
   overflow : hidden;
+  position : absolute;
+  bottom : 0;
   width : 100%;
+  height : 4%;
+  border-top : calcRem(1px) solid $sky;
   text-align : center;
-  position: absolute;
-  height: 5%;
-  bottom: 0;
-  @media only screen and (orientation: landscape) and (max-height: 321px) {
-    height: 10%;
+  @media only screen and (orientation: landscape) {
+    height : 10%;
+  }
+  @media only screen and (min-width: 768px) {
+    height : 5%;
   }
   p {
     display : inline-block;
     margin : 0;
-    padding : 0 calculateRem(8px) 0 calculateRem(8px);
-    font-size : calculateRem(14px);
+    padding : 0 calcRem(8px) 0 calcRem(8px);
+    font-size : calcRem(14px);
   }
 }

@@ -1,64 +1,48 @@
 const createRepeatedWordsElements = require('./createRepeatedWordsElements');
-const highlightText = require('./highlightText');
-const highlightWord = require('./highlightWord');
+const handleRepeatedWordClick = require('./handleRepeatedWordClick');
+const highlightActiveRepeatedWord = require('./highlightActiveRepeatedWord');
+const highlightSelectedRepeatedWords = require('./highlightSelectedRepeatedWords');
 
-// div which display highlight repeated words
-const repeatedWordsOutput = document.getElementById('repeated-words-output');
-// reference to repeated words container
+const highlightedRepeatedWords = document.getElementById('highlighted-repeated-words');
 const repeatedWordsList = document.getElementsByClassName('repeated-words-list')[0];
-// // reference to created repeated words
-const li = repeatedWordsList.getElementsByTagName('li');
-const textAreaReference = document.getElementById('text-area');
+const repeatedWordsListItems = repeatedWordsList.getElementsByTagName('li');
 
-// store information about last clicked word and whether is highlighted
+// store information about last clicked word and whether is highlighted or not
 const state = {
     highlighted: false,
     currentWord: ''
 };
 
-const addRepeatedWords = repeatingWords => {
-    // remove all repeated words, if they exist
+const addRepeatedWords = (repeatedWords, words, textAreaValue) => {
+    // remove all repeated words from the list
     while (repeatedWordsList.hasChildNodes()) {
         repeatedWordsList.removeChild(repeatedWordsList.firstChild);
     }
 
-    // repeatingWords array store arrays = [ word, count ]
-    repeatingWords.forEach((repeatingWord, index) => {
+    // remove current word state, if the same word is removed from text area
+    if (!words.includes(state.currentWord)) {
+        state.currentWord = '';
+    }
 
-        // create elements
-        createRepeatedWordsElements(repeatedWordsList, repeatingWord[0], repeatingWord[1]);
-
-        // event handler - highlight selected words
-        const highlight = event => {
-            // if no words are highlighted or highlighted, but another word is clicked
-            if (!state.highlighted ||
-                (state.highlighted && state.currentWord !== repeatingWord[0])) {
-                // highlight repeated words on text
-                repeatedWordsOutput.innerHTML = highlightText(repeatingWord[0]);
-                // set state of clicked word
-                state.highlighted = true;
-                state.currentWord = repeatingWord[0];
-                // highlight clicked word on the list
-                highlightWord(li, state.currentWord);
-
-            } else {
-                // set state of span element
-                state.highlighted = false;
-                state.currentWord = repeatingWord[0];
-                event.target.style.backgroundColor = '#EFEFEF';
-                event.target.style.color = '#000';
-                repeatedWordsOutput.innerHTML = textAreaReference.value;
-            }
-
+    // repeatedWords array store arrays = [ word, count ]
+    repeatedWords.forEach((repeatedWord, index) => {
+        // create and add repeated word to the list
+        createRepeatedWordsElements(repeatedWordsList, repeatedWord[0], repeatedWord[1]);
+        // highlight repeated word in textarea and in repeated words list
+        repeatedWordsListItems[index].addEventListener('click', event => {
+            const newState = handleRepeatedWordClick(event.target, repeatedWord[0], repeatedWordsListItems, textAreaValue);
+            // update state
+            state.highlighted = newState.highlighted;
+            state.currentWord = newState.currentWord;
             event.preventDefault();
-        };
+        });
 
-        li[index].addEventListener('click', highlight);
     });
-    // keep selected word and words in text highlighted when changing input
+
+    // keeps clicked word and words in textarea highlighted, when  input change
     if (state.highlighted) {
-        repeatedWordsOutput.innerHTML = highlightText(state.currentWord);
-        highlightWord(li, state.currentWord);
+        highlightedRepeatedWords.innerHTML = highlightSelectedRepeatedWords(state.currentWord, textAreaValue);
+        highlightActiveRepeatedWord(repeatedWordsListItems, state.currentWord);
     }
 };
 

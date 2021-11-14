@@ -1,0 +1,16 @@
+.repeated-words {
+  border-right : 1px solid $carbon;
+  @media only screen and (min-width: 768px) {
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 20%;
+    height : 100%;
+    border-right : 1px solid $carbon;
+  }
+  .active {
+    color : #EFEFEF;
+    background-color : #FF3B3F;
+  }
+}
+

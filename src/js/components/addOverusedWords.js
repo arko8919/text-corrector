@@ -1,65 +1,30 @@
-const highlightText = require('./highlightText');
-const createOverusedWordsElements = require('./createOverusedWordsElements');
+const createOverusedWordsElement = require('./createOverusedWordsElement');
+const removeOverusedWord = require('./removeOverusedWord');
+const selectOverusedWord = require('./selectOverusedWord');
 
 const overusedWordsList = document.getElementsByClassName('overused-words-list')[0];
+const highlightedOverusedWords = document.getElementById('highlighted-overused-words');
 const remove = overusedWordsList.getElementsByClassName('remove');
-const overusedWordsOutput = document.getElementById('overused-words-output');
 const checkbox = document.getElementsByClassName('checkbox');
+const textArea = document.getElementById('text-area');
 
 const addOverusedWords = (overusedWords, checkedWords) => {
-
     // remove all overused words from the list
     while (overusedWordsList.hasChildNodes()) {
         overusedWordsList.removeChild(overusedWordsList.firstChild);
     }
-
     // add overused word to the list
     overusedWords.forEach((word, index) => {
-
-        // create elements
-        createOverusedWordsElements(overusedWordsList, checkedWords, word);
-
+        // create and add overused word to the list
+        createOverusedWordsElement(checkedWords, word, overusedWordsList,);
         // remove overused word from the list
         remove[index].addEventListener('click', event => {
-            // remove word from checked word list
-            const wordToRemove = event.target.parentElement.id;
-            console.log(event.target.parentElement.id);
-            // if overused word is checked remove it from the list
-            for (let checkedWordsIndex = 0; checkedWordsIndex < checkedWords.length; checkedWordsIndex++) {
-                if (checkedWords[checkedWordsIndex] === wordToRemove) {
-                    checkedWords.splice(checkedWordsIndex, 1);
-                }
-            }
-
-            // remove word from the overused word list
-            for (let overusedWordsIndex = 0; overusedWordsIndex < overusedWords.length; overusedWordsIndex++) {
-                if (overusedWords[overusedWordsIndex] === wordToRemove) {
-                    overusedWords.splice(overusedWordsIndex, 1);
-                }
-            }
-
-            // remove list item
-            event.target.parentElement.remove();
-
-            overusedWordsOutput.innerHTML = highlightText(checkedWords);
-
+            removeOverusedWord(overusedWords, checkedWords, highlightedOverusedWords, event.target, textArea.value);
             event.preventDefault();
         });
-
+        // highlight overused word in textarea
         checkbox[index].addEventListener('change', event => {
-            if (event.target.checked) {
-                // get label element content
-                checkedWords.push(event.target.parentElement.id);
-                console.log(event.target.parentElement.id);
-            } else {
-                for (let i = checkedWords.length - 1; i >= 0; i--) {
-                    if (checkedWords[i] === event.target.parentElement.id) {
-                        checkedWords.splice(i, 1);
-                        break;
-                    }
-                }
-            }
-            overusedWordsOutput.innerHTML = highlightText(checkedWords);
+            selectOverusedWord(checkedWords, highlightedOverusedWords, event.target, textArea.value);
             event.preventDefault();
         });
     });

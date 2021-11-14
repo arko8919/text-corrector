@@ -1,0 +1,45 @@
+nav {
+  height: 6%;
+  padding: calcRem(5px) 0;
+  font-size: 0;
+  text-align: center;
+  user-select: none;
+  @media only screen and (orientation: landscape) {
+    height: 12%;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 8%;
+  }
+  .edit-area-btn {
+    width: 33.33%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: calcRem(20px);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .active {
+    color: $watermelon;
+  }
+
+  .underline {
+    position: relative;
+    left: 0;
+    width: 33.33%;
+    border-bottom: calcRem(2px) solid $watermelon;
+    transition: all .5s;
+  }
+
+  .underline-text {
+    left: 0;
+  }
+  .underline-words {
+    left: 33.33%;
+  }
+  .underline-faq {
+    left: 66.66%;
+  }
+}

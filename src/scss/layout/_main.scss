@@ -1,25 +1,10 @@
 main {
   overflow: hidden;
+  position: relative;
   height: 80%;
-  @media only screen and (min-width: 600px) {
-    height: 70%;
-  }
-  @media only screen and (max-width: 480px), screen and (max-height: 468px) and (orientation: landscape) {
-    min-height:  40rem;
-  }
-
-  @media only screen and (min-width: 481px), screen and (max-height: 468px) and (orientation: landscape) {
-    min-height:  30rem;
-  }
-
-  .container {
-    height: 92%;
-    @media only screen and (min-height: 468px) {
-      height: 95%;
-    }
-    .content {
-      border-top: calculateRem(1px) solid #A9A9A9;
-      border-bottom: calculateRem(1px) solid #A9A9A9;
-    }
+  // necessary on small device with landscape mode
+  min-height: calcRem(420px);
+  @media only screen and (min-width: 600px) and (min-height: 600px) {
+    height: 73%;
   }
 }

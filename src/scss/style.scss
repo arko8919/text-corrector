@@ -9,44 +9,47 @@
 @import 'layout/main';
 @import 'layout/footer';
 // Components
-@import 'components/add-overused-words';
-@import 'components/add-text';
-@import 'components/instruction';
-@import 'components/editor';
-@import 'components/side-content';
+@import 'components/words-input';
+@import 'components/text-input';
+@import 'components/questions';
+@import 'components/edit-area';
 @import 'components/string-data';
+@import 'components/words-list';
+@import 'components/repeated-words';
+@import 'components/overused-words';
+@import 'components/edit-area-nav';
+@import 'components/edit-area-sections';
 
 html {
-  position: relative;
   box-sizing: border-box;
   height: 100%;
   font-size: 100%;
   @media only screen and (max-width: 320px) {
-    font-size: 8px;
+    font-size: 6px;
   }
 
   @media only screen and (min-width: 321px) {
-    font-size: 10px;
+    font-size: 8px;
   }
 
   @media only screen and (min-width: 468px) {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   @media only screen and (min-width: 768px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   @media only screen and (min-width: 1224px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   @media only screen and (min-width: 1824px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media only screen and (orientation: landscape) and (max-height: 468px) {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
@@ -55,20 +58,10 @@ html {
 }
 
 body {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  overflow-x: hidden;
+  height: inherit;
   margin: 0;
   padding: 0;
   background: url('../assets/background.png') repeat;
   font-family: $default-font-family;
-  h1, h2, h3, h4 {
-    text-align: center;
-  }
-
-  h4 {
-    display: inline-block;
-    margin: calculateRem(2px) 0;
-    border-bottom: 1px solid $sky;
-  }
 }

@@ -1,0 +1,81 @@
+.words-input {
+  overflow-y : auto;
+  left : 100%;
+  border-top : 1px solid $sky;
+
+  // add custom overused word/words to list
+  .add-words {
+    padding : calcRem(50px);
+    border-bottom : calcRem(1px) solid $sky;
+    text-align : center;
+
+    input {
+      width : 50%;
+      margin-bottom : calcRem(5px);
+      padding : calcRem(3px);
+    }
+
+    button {
+      display : block;
+      width : 25%;
+      margin : 0 auto;
+      padding : calcRem(5px);
+      border : none;
+      outline : none;
+      color : $white;
+      background-color : $watermelon;
+      box-shadow : 0 0 5px 0 $black;
+      font-family : $mono-font-family;
+      font-size : calcRem(14px);
+      font-weight : bold;
+      text-transform : uppercase;
+      cursor : pointer;
+      transition : all .5s;
+      &:hover {
+        color : $watermelon;
+        background-color : $white;
+      }
+    }
+  }
+  // example of overused words
+  .click-to-add-words {
+    text-align : center;
+
+    h3 {
+      display : inline-block;
+      padding : calcRem(10px);
+      border-bottom : calcRem(2px) solid $sky;
+      text-transform : uppercase;
+    }
+
+    p {
+      display : inline-block;
+      padding : calcRem(6px);
+    }
+    ol {
+      padding : calcRem(5px);
+      text-align : left;
+      @media only screen and (min-width: 600px) {
+      }
+      li {
+        display : inline-block;
+        position : relative;
+        width : calcRem(160px);
+        margin : calcRem(10px);
+        padding-left : calcRem(40px);
+        button {
+          @include center(false, true);
+          left : 0;
+          padding : calcRem(3px);
+          border : none;
+          border-radius : 50%;
+          outline : none;
+          color : $neutral;
+          background-color : $watermelon;
+          font-size : calcRem(24px);
+          cursor : pointer;
+        }
+      }
+    }
+  }
+}

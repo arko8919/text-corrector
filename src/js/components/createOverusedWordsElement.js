@@ -1,7 +1,6 @@
-const createOverusedWordsElements = (overusedWordsList, checkedWords, word) => {
-    console.log(word);
+const createOverusedWordsElement = (checkedWords, word, overusedWordsList) => {
     // container
-    const labelElement = document.createElement('label');
+    const listItem = document.createElement('li');
     // input checkbox
     const inputElement = document.createElement('input');
     // custom checkbox
@@ -11,13 +10,13 @@ const createOverusedWordsElements = (overusedWordsList, checkedWords, word) => {
     // create text nodes
     const labelTextNode = document.createTextNode(word);
     // append text nodes
-    labelElement.appendChild(labelTextNode);
+    listItem.appendChild(labelTextNode);
     // append input checkbox, custom checkbox, icon into label container
-    labelElement.appendChild(inputElement);
-    labelElement.appendChild(spanElement);
-    labelElement.appendChild(spanRemoveElement);
+    listItem.appendChild(inputElement);
+    listItem.appendChild(spanElement);
+    listItem.appendChild(spanRemoveElement);
     // set attr
-    labelElement.setAttribute('id', word);
+    listItem.setAttribute('id', word);
     inputElement.setAttribute('type', 'checkbox');
     inputElement.setAttribute('class', 'checkbox');
     spanRemoveElement.setAttribute('class', 'remove');
@@ -26,7 +25,9 @@ const createOverusedWordsElements = (overusedWordsList, checkedWords, word) => {
         inputElement.setAttribute('checked', '');
     }
 
-    overusedWordsList.appendChild(labelElement);
+    overusedWordsList.appendChild(listItem);
+
+
 };
 
-module.exports = createOverusedWordsElements;
+module.exports = createOverusedWordsElement;

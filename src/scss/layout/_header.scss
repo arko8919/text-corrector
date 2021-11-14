@@ -1,19 +1,17 @@
 header {
-  height : 10%;
-  font-family : $mono-font-family;
-  @media only screen and (min-width: 600px) {
-    height : 20%;
+  height: 10%;
+  min-height: calcRem(100px);
+  border-bottom: calcRem(3px) solid $carbon;
+  font-family: $mono-font-family;
+  text-align: center;
+  @media only screen and (min-width: 600px) and (min-height: 600px) {
+    height: 17%;
   }
 
-  @media only screen and (max-width: 600px), screen and (max-height: 468px) and (orientation: landscape) {
-    min-height: 6rem;
-  }
   h1 {
-    margin : 0;
-    padding-top : calculateRem(5px);
-    text-transform : uppercase;
-  }
-  p {
-    text-align : center;
+    text-shadow: 1px 1px 1px $watermelon;
+    margin: 0;
+    padding-top: calcRem(5px);
+    text-transform: uppercase;
   }
 }

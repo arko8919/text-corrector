@@ -1,0 +1,73 @@
+.overused-words {
+  border-left : 1px solid $carbon;
+  @media only screen and (min-width: 768px) {
+    position : absolute;
+    top : 0;
+    right : 0;
+    width : 20%;
+    height : 100%;
+    border-left : 1px solid $carbon;
+  }
+  li {
+    position : relative;
+    font-family : $mono-font-family;
+    // custom checkbox
+    .check-mark {
+      position : absolute;
+      top : 0;
+      left : 0;
+      width : calcRem(30px);
+      height : 100%;
+      background-color : $gainsboro;
+      // create the checkmark/indicator (hidden when not checked)
+      &:after {
+        display : none;
+        position : absolute;
+        top : 50%;
+        left : 50%;
+        width : calcRem(5px);
+        height : calcRem(10px);
+        border : solid $neutral;
+        border-width : 0 calcRem(3px) calcRem(3px) 0;
+        content : '';
+        transform : translate(-50%, -50%) rotate(45deg);
+      }
+    }
+    // hide the browser's default checkbox
+    input {
+      position : absolute;
+      z-index : 10;
+      top : 0;
+      left : 0;
+      width : 85%;
+      height : 100%;
+      margin : 0;
+      opacity : 0;
+      cursor : pointer;
+
+      &:checked ~ .check-mark:after {
+        display : block;
+      }
+
+      &:checked ~ .check-mark {
+        background-color : $watermelon;
+      }
+    }
+    // remove element
+    .remove {
+      position : absolute;
+      top : 0;
+      right : 0;
+      width : 15%;
+      height : 100%;
+      &:after {
+        @include center(false, true);
+        left : calcRem(3px);
+        width : 25%;
+        border : solid $black;
+        border-width : calcRem(3px) 0 0 0;
+        content : '';
+      }
+    }
+  }
+}

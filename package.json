@@ -1,7 +1,7 @@
 {
-  "name": "email-editor",
+  "name": "specialized-text-corrector",
   "version": "1.0.0",
-  "description": "email-editor",
+  "description": "Editor Of Repeated And Overused Words",
   "main": "app.js",
   "browserslist": [
     "> 1%",
@@ -9,15 +9,18 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js",
+    "start": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js --open",
     "build": "webpack --config webpack.config.js",
     "deploy": "npm run build&&gh-pages -d dist",
-    "build-watch": "webpack --config webpack.config.js --watch"
+    "build-watch": "webpack --config webpack.config.js --watch",
+    "comb": "csscomb src/scss"
   },
   "keywords": [
     "overused",
+    "repeated",
     "words",
-    "checker"
+    "checker",
+    "finder"
   ],
   "author": "Artur SD",
   "license": "ISC",
@@ -31,7 +34,7 @@
     "file-loader": "^1.1.11",
     "gh-pages": "^1.2.0",
     "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.14.1",
     "postcss-loader": "^2.1.5",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
