@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Specialized Text Corrector</title>
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="//cdn.materialdesignicons.com/2.1.19/css/materialdesignicons.min.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700" rel="stylesheet">
+</head>
+<body>
+<header role="banner">
+    <h1>Specialized Text Corrector</h1>
+    <p>- Editor Of Repeated And Overused Words -</p>
+</header>
+<main role="main">
+    <section class="edit-area">
+        <nav>
+            <button class="edit-area-btn active" value="textarea">Text area</button>
+            <button class="edit-area-btn" value="words">Words</button>
+            <button class="edit-area-btn" value="faq">FAQ</button>
+            <div class="underline"></div>
+        </nav>
+        <div class="edit-area-sections">
+            <section class="text-input">
+                <textarea title="text-area" id="text-area" placeholder="Type text here ..."></textarea>
+                <div id="highlighted-repeated-words"></div>
+                <div id="highlighted-overused-words"></div>
+            </section>
+            <section class="words-input">
+                <div class="add-words">
+                    <input id="input" type="text" title="input"/>
+                    <button id="add-words-btn">Add Words</button>
+                </div>
+                <div class="click-to-add-words">
+                    <h3>Overused Words</h3>
+                    <div>
+                        <p>Common</p>
+                        <ol class="common-overused-words">
+                        </ol>
+                    </div>
+                    <div>
+                        <p>On the curriculum vitae</p>
+                        <ol class="cv-overused-words">
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section class="questions">
+                <h3>Frequently Asked Questions</h3>
+                <ul>
+                    <li>
+                        <h4>How to add custom overused word/words to the list?</h4>
+                        <ol>
+                            <li>Go to 'WORDS' section.</li>
+                            <li>In input area, type word/words of your choosing, using comma or whitespace as
+                                separator.
+                            </li>
+                            <li>Click on 'ADD WORDS' button.</li>
+                            <li>Custom word/words can be found now on overused words list.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>How to highlight overused or repeated words?</h4>
+                        <p>In the list of repeated or overused words, click on the word. The selection will be
+                            visible
+                            on the list and in the text area.</p></li>
+                    <li>
+                        <h4>How to delete overused words?</h4>
+                        <p>Each custom or pre defined overused word have a <span> - </span> icon on
+                            right side. Click on it, to delete a word.</p>
+
+                    </li>
+                    <li>
+                        <h4>How to add pre defined overused words?</h4>
+                        <p>In the "WORD" section, under the area for entering custom overused words you can find
+                            pre defined words.</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="string-data">
+            <p>Words: <span>0</span></p>
+            <p>Sentences: <span>0</span></p>
+            <p>Characters: <span>0</span></p>
+        </div>
+    </section>
+    <section class="repeated-words words-list">
+
+            <h3>Repeated Words</h3>
+
+        <ul class="repeated-words-list">
+        </ul>
+    </section>
+    <section class="overused-words words-list">
+            <h3>Overused Words</h3>
+        <ul class="overused-words-list">
+        </ul>
+    </section>
+</main>
+<footer role="contentinfo">
+    <div class="social-media">
+        <a href="https://www.facebook.com/artur.sasdunajewski"
+           class="mdi mdi-facebook-box"
+           target="_blank"
+           rel="noopener noreferrer"
+        ></a>
+        <a href="https://www.linkedin.com/in/artur-sas-dunajewski/"
+           class="mdi mdi-linkedin-box"
+           target="_blank"
+           rel="noopener noreferrer"
+        ></a>
+        <a href="https://github.com/arko8919"
+           class="mdi mdi-github-box"
+           target="_blank"
+           rel="noopener noreferrer"
+        ></a>
+        <a href="https://www.instagram.com/arko8919/"
+           class="mdi mdi-instagram"
+           target="_blank"
+           rel="noopener noreferrer"
+        ></a>
+    </div>
+    <p>Artur S-D @2018</p>
+</footer>
+<noscript>
+    You need to enable JavaScript to run this app.
+</noscript>
+<script type="text/javascript" src="bundle.js"></script></body>
+</html>
